@@ -1,7 +1,7 @@
 #Word guessing game
 print("Guess the word.")
 print(" 5 wrong attempts are allowed")
-new_word = ('Hazardus').lower()
+new_word = ('Ghanashyam').lower()
 given = new_word
 word_space = ""
 for x in new_word :
@@ -40,11 +40,11 @@ while r <= 5  :
             break
 
     elif entered not in new_word :
-        print("Wrong")
-        r += 1
-        print(f" {5 - r} more wrong guesses are allowed")
-
-else:
-    print("You lose")
-    print(f"The secret word is '{given}'")
-
+        if 5-r > 0 :
+            print("Wrong")
+            r += 1
+            print(f" {5 - r} more wrong guesses are allowed")
+        else :
+            print("You lose")
+            print(f"The secret word is '{given}'")
+            break
